@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
 const http = require('http');
 const bodyParser = require('body-parser')
 const express = require('express')
@@ -9,11 +8,15 @@ const productRoutes = require('./src/routes/products');
 const supplierRoutes = require('./src/routes/supplier');
 
 const app = express();
+//TEMPORAL PARA LEVANTAR VERCEL
+const PORT = 4000
+const DATABASE_URL = 'mongodb+srv://joaquin:joaquin@clustermcga2022.bmq6g6d.mongodb.net/?retryWrites=true&w=majority'
+const DB_NAME = clustermcga2022
 
 /* Connect to MongoDB */
 mongoose
-    .connect(process.env.DATABASE_URL)
-    .then(() => console.log(`DATABASE [Online] => Name: ${process.env.DB_NAME}`))
+    .connect(DATABASE_URL)
+    .then(() => console.log(`DATABASE [Online] => Name: ${DB_NAME}`))
     .catch((error) => console.log(`ERROR: ${error.message}`));
 
 /* Logging the request */
@@ -45,4 +48,4 @@ app.use((req, res, next) => {
 
 /* Create the server */
 const httpServer = http.createServer(app);
-httpServer.listen(process.env.PORT, () => console.log(`API [Online] => Running on port: ${process.env.PORT}`));
+httpServer.listen(PORT, () => console.log(`API [Online] => Running on port: ${PORT}`));
