@@ -8,15 +8,11 @@ const productRoutes = require('./src/routes/products');
 const supplierRoutes = require('./src/routes/supplier');
 
 const app = express();
-//TEMPORAL PARA LEVANTAR VERCEL
-const PORT = 4000
-const DATABASE_URL = 'mongodb+srv://joaquin:joaquin@clustermcga2022.bmq6g6d.mongodb.net/?retryWrites=true&w=majority'
-const DB_NAME = clustermcga2022
 
 /* Connect to MongoDB */
 mongoose
-    .connect(DATABASE_URL)
-    .then(() => console.log(`DATABASE [Online] => Name: ${DB_NAME}`))
+    .connect('mongodb+srv://joaquin:joaquin@clustermcga2022.bmq6g6d.mongodb.net/?retryWrites=true&w=majority')
+    .then(() => console.log(`DATABASE [Online] => Name: clustermcga2022`))
     .catch((error) => console.log(`ERROR: ${error.message}`));
 
 /* Logging the request */
@@ -48,4 +44,4 @@ app.use((req, res, next) => {
 
 /* Create the server */
 const httpServer = http.createServer(app);
-httpServer.listen(PORT, () => console.log(`API [Online] => Running on port: ${PORT}`));
+httpServer.listen(4000, () => console.log(`API [Online] => Running on port: ${4000}`));
