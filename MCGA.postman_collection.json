@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "b4b5ff92-974b-497f-b9e2-71603632f489",
+		"name": "MCGA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GET PRODUCTOS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/product",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PRODUCT BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/product/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "631e8712fec6475fe618b107"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE PRODUCT",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Producto2\",\r\n    \"description\" : \"asd test\",\r\n    \"category\": \"sarasa\",\r\n    \"price\": 200,\r\n    \"stock\": 2\r\n}"
+						},
+						"url": {
+							"raw": "localhost:4000/product",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR PRODUCTO",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Producto1 actualizado\",\r\n    \"description\" : \"asd test actualizado\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:4000/product/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "631e8712fec6475fe618b107"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/product/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "631e8712fec6475fe618b107"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suppliers",
+			"item": [
+				{
+					"name": "GET PROVEEDORES",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/supplier",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET PROVEEDORES BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/supplier/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"supplier",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "631e8712fec6475fe618b107"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE PROVEEDOR",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Proveedor 123\",\r\n    \"description\" : \"asd test\",\r\n    \"active\": true\r\n}"
+						},
+						"url": {
+							"raw": "localhost:4000/supplier",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"supplier"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTUALIZAR PROVEEEDOR",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Proveedor actualizado\",\r\n    \"description\" : \"asd test actualizado\",\r\n    \"active\": true\r\n}"
+						},
+						"url": {
+							"raw": "localhost:4000/supplier/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"supplier",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6323655b966a06af8c0daa6e"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PROVEEDOR",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:4000/supplier/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"supplier",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "631e8712fec6475fe618b107"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ACTIVAR  PROVEEDOR",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:4000/supplier/activate/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"supplier",
+								"activate",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6323655b966a06af8c0daa6e"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
