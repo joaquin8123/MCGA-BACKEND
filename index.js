@@ -6,6 +6,7 @@ const express = require('express')
 /* Routes Import */
 const productRoutes = require('./src/routes/products');
 const supplierRoutes = require('./src/routes/supplier');
+const authRoutes = require('./src/routes/auth');
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(bodyParser.json());
 /* Routes */
 app.use('/product', productRoutes);
 app.use('/supplier', supplierRoutes);
+app.use('/auth', authRoutes);
 
 /* Error handling */
 app.use((req, res, next) => {

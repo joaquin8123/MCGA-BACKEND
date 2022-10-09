@@ -26,9 +26,22 @@ const supplierMessages = {
     ACTIVATE_SUPPLIER_SUCCESS: 'the supplier was successfully activate',
 };
 
+const authMessages = {
+    HASH_ERROR: 'An error ocurred saving password.',
+    REGISTER_SUCCESS: 'User registered successfully.',
+    REGISTER_ERROR: 'An error ocurred creating user.',
+    USER_EXISTS: 'User with this email already exists.',
+    LOGIN_SUCCESS: 'User authenticated successfully.',
+    LOGIN_ERROR: 'An error ocurred authenticating user.',
+    INACTIVE_USER: 'User is not active.',
+    INCORRECT_PASSWORD: 'Incorrect password.',
+    UNEXISTENT_USER: 'User not found.'
+};
+
 const responseMessages = {
     ...productMessages,
-    ...supplierMessages
+    ...supplierMessages,
+    ...authMessages
 };
 
 const sendResponse = (res, msgKey, code, data = {}, error = false) => {
