@@ -4,10 +4,11 @@ const sendResponse = require('../helper/sendResponse')
 const create = async (req, res) => {
     try {
         const  { name, description, category, price, stock } = req.body;
+        console.log('body', req.body)
         const product = new Product({
             name,
-            description,
-            category,
+            // description,
+            // category,
             price,
             stock
         })

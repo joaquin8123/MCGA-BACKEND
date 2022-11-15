@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const http = require('http');
 const bodyParser = require('body-parser')
 const express = require('express')
+const cors = require('cors')
 
 /* Routes Import */
 const productRoutes = require('./src/routes/products');
@@ -30,6 +31,9 @@ app.use((req, res, next) => {
 /* Parse the request */
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+/* Rules of our API */
+app.use(cors());
 
 /* Routes */
 app.use('/product', productRoutes);

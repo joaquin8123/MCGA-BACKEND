@@ -6,13 +6,13 @@ const ProductSchema = new Schema(
             type: String,
             required: 'name is required.'
         },
-        description: {
-            type: String
-        },
-        category: {
-            type: String,
-            required: 'Category is required.'
-        },
+        // description: {
+        //     type: String
+        // },
+        // category: {
+        //     type: String,
+        //     required: 'Category is required.'
+        // },
         price: {
             type: Number,
             required: 'Price is required.'

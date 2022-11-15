@@ -33,7 +33,7 @@ const login = async (req, res) => {
             bcrypt.compare(password, user.password, (error, result) => {
                 if (error) return sendResponse(res, 'LOGIN_ERROR', 401, { data: error });
                 if (result) {
-                    return sendResponse(res, 'LOGIN_SUCCESS', 200, { data: user })
+                    return sendResponse(res, 'LOGIN_SUCCESS', 200, { user })
                 } else return sendResponse(res, 'INCORRECT_PASSWORD', 401, { data: error });
             });
         })
